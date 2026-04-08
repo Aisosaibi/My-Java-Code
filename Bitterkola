@@ -1,0 +1,160 @@
+--------------------
+// (1)
+--------------------
+
+import java.util.Scanner;
+
+public class TimeSum {
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Initial Time (hh:mm): ");
+        String time1 = input.nextLine();
+        String[] parts1 = time1.split(":");
+        int hour1 = Integer.parseInt(parts1[0]);
+        int minute1 = Integer.parseInt(parts1[1]);
+
+        System.out.print("Time Since (hh:mm): ");
+        String time2 = input.nextLine();
+        String[] parts2 = time2.split(":");
+        int hour2 = Integer.parseInt(parts2[0]);
+        int minute2 = Integer.parseInt(parts2[1]);
+
+        int sumMinutes = minute1 + minute2;
+        int sumHours = hour1 + hour2;
+
+        if (sumMinutes >= 60) {
+            int min_to_hr = sumMinutes / 60;
+            int minutes = sumMinutes % 60;
+        }
+
+        sumHours = sumHours % 24;
+
+        System.out.printf("The total time is %02d:%02d%n", sumHours, sumMinutes);
+    }
+}
+
+--------------------
+// (2)
+--------------------
+import java.util.Scanner;
+
+public class Add1_5 {
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input a five digit number: ");
+        int pentaDigit = input.nextInt();
+    
+        int digit1 = pentaDigit/10000;
+        int digit5 = pentaDigit % 10;
+        int sum = digit1 + digit5;
+
+        System.out.printf("Total is %d%n, sum);
+        
+
+        // String pentaDigit = input.nextLine();
+     
+        // int digit1 = pentaDigit.charAt(0) - '0';
+        // int digit5 = pentaDigit.charAt(0) - '0';
+        // int sum = digit1 + digit5;
+
+        System.out.printf("Total is %d%n", sum);
+    }
+}   
+
+--------------------
+// (3)
+--------------------
+
+import java.util.Scanner;
+
+public class Discounter {
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Price (amount only): ");
+        String price = input.nextLine();
+        price = price.replace(",", "");
+        int amount = Integer.parseInt(price);
+
+        System.out.print("Discount: ");
+        String discount = input.nextLine();
+        String [] number = discount.replace("%", "");
+        int percent = Integer.parseInt(number[0]);
+  
+        double newPrice = amount * (1 - percent/100.0);
+
+        System.out.printf("Discounted Price is %.2f%n," newPrice);
+    }
+}   
+
+--------------------
+// (4)
+--------------------
+
+import java.util.Scanner;
+
+public class IsMultiple {
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input first digit: ");
+        int multiple = input.nextInt();
+
+        System.out.print("Input second digit: ");
+        int factor = input.nextInt();
+    
+        int digit1 = pentaDigit/10000;
+        int digit5 = pentaDigit % 10;
+        int sum = digit1 + digit5;
+
+
+
+        System.out.printf("Total is %d%n, sum);
+
+--------------------
+// (5)
+--------------------
+
+--------------------
+// (6)
+--------------------
+
+--------------------
+// (7)
+--------------------
+
+--------------------
+// (8)
+--------------------
+
+--------------------
+// (9)
+--------------------
+
+--------------------
+// (10)
+--------------------
+
+--------------------
+// (11)
+--------------------
+
+--------------------
+// (12)
+--------------------
+
+--------------------
+// (13)
+--------------------
+
+--------------------
+// (14)
+--------------------
+
+--------------------
+// (15)
+--------------------
