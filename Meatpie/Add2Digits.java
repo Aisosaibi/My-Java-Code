@@ -10,6 +10,6 @@ public class Add2Digits {
         System.out.print("Enter Second integer: ");
         int number2 = input.nextInt();
 
-        System.out.printf("Sum: %d", (number1 + number2));
+        System.out.printf("Sum: %d%n", (number1 + number2));
     }
 }
