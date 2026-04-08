@@ -5,8 +5,7 @@
 import java.util.Scanner;
 
 public class TimeSum {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Initial Time (hh:mm): ");
@@ -41,8 +40,7 @@ public class TimeSum {
 import java.util.Scanner;
 
 public class Add1_5 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Input a five digit number: ");
         int pentaDigit = input.nextInt();
@@ -71,8 +69,7 @@ public class Add1_5 {
 import java.util.Scanner;
 
 public class Discounter {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Price (amount only): ");
@@ -98,8 +95,7 @@ public class Discounter {
 import java.util.Scanner;
 
 public class IsMultiple {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Input first digit: ");
         int multiple = input.nextInt();
@@ -107,24 +103,95 @@ public class IsMultiple {
         System.out.print("Input second digit: ");
         int factor = input.nextInt();
     
-        int digit1 = pentaDigit/10000;
-        int digit5 = pentaDigit % 10;
-        int sum = digit1 + digit5;
+        if (multiple % factor == 0) {
+            System.out.printf("%d is a multiple of %d%n", multiple, factor);
+        }
 
-
-
-        System.out.printf("Total is %d%n, sum);
+        if (multiple % factor != 0) {
+            System.out.printf("%d is not a multiple of %d%n", multiple, factor);
+        }
+    } 
+}
 
 --------------------
 // (5)
 --------------------
 
+import java.util.Scanner;
+
+public class BMIClassifier {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Weight (kg): ");
+        int weight = input.nextInt();
+
+        System.out.print("Height (m): ");
+        int height = input.nextInt();
+        
+        double bmi = weight / Math.pow(height, 2);    
+
+        if (bmi < 18.5) {
+            System.out.printf("Underweight (<18.5)");
+        }
+
+        if (bmi >= 18.5 <= 24.9) {
+            System.out.printf("Normal (18.5 - 24.9)");
+        }
+
+        if (bmi > 24.9) {
+            System.out.printf("Overweight (>24.9)");
+        }
+
+    } 
+}
+
 --------------------
 // (6)
 --------------------
 
+import java.util.Scanner;
+
+public class IsMultiple {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input first digit: ");
+        int multiple = input.nextInt();
+
+        System.out.print("Input second digit: ");
+        int factor = input.nextInt();
+    
+        if (multiple % factor == 0) {
+            System.out.printf("%d is a multiple of %d%n", multiple, factor);
+        }
+
+        if (multiple % factor != 0) {
+            System.out.printf("%d is not a multiple of %d%n", multiple, factor);
+        }
+    } 
+}
 --------------------
 // (7)
+
+public class IsDivisibleby5or3 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter number: ");
+        int number = inputnextInt();
+        
+        if (number % 5 == 0 && number % 3 == 0) {
+            System.out.println("FizzBuzz")        
+        }
+   
+        else (number % 5 == 0) {
+            System.out.println("Buzz")
+        }
+     
+        else (number % 3 == 0) {
+            System.out.println("Fizz")
+        }
+ 
+    }       
+}
 --------------------
 
 --------------------

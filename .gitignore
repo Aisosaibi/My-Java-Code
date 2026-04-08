@@ -1,0 +1,5 @@
+# Compiled bytecode - no thanks!
+*.class
+
+# HTML files
+*.html
