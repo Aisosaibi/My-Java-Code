@@ -1,5 +1,8 @@
 # Compiled bytecode - no thanks!
 *.class
 
-# HTML files
+# Ignore Text files
+*.txt
+
+# Ignore HTML files
 *.html

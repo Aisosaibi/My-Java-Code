@@ -4,7 +4,8 @@ public class RainbowColor {
     public static void main(String[] args) {
         Random random = new Random();
         int number = random.nextInt(7) + 1;
-
+        
+//        System.out.println(number);
         if (number == 1) {
             System.out.println("Violet");
         } else if (number == 2) {
