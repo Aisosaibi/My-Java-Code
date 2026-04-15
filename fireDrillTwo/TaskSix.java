@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TaskFive {
+public class TaskSix {
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 		double sum = 0;
