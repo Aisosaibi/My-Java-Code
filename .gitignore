@@ -6,3 +6,6 @@
 
 # Ignore HTML files
 *.html
+
+# Ignore the out folder
+out/
