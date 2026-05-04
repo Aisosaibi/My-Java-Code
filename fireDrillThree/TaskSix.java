@@ -15,7 +15,7 @@ public class TaskSix{
 
         int number = 0;
 
-        for (int index = 0; index < array.length; index++){
+        for (int index = 0; index < array.length; index += 2){
                 subsetEven[number] = array[index];
                 number++;
         }
