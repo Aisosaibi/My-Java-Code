@@ -1,0 +1,26 @@
+/* Collect 10 scores and put them in an array */
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class TaskOne{
+    public static void main(String[] args){
+//        Scanner userInput = new Scanner(System.in);
+//        System.out.print("Enter number: ");
+//        int number = userInput.nextInt();    
+
+        int number = 10;
+        int [] array = new int[number];
+
+        for (int index = 0; index < number; index++){
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter number: ");
+            int entries = scanner.nextInt();
+            array[index] = entries;
+        }    
+        System.out.println("Entries received");
+//        System.out.println(Arrays.toString(array));
+        
+    }
+
+}
