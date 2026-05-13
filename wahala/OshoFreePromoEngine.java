@@ -1,14 +1,19 @@
 public class OshoFreePromoEngine{
     public static double applyPromo(double cartTotal, String promoCode){
+
+        if (cartTotal < 0){
+            throw new IllegalArgumentException("Cart total cannot be negative");
+        }
+
         switch (promoCode){
             case "STARTER10":
-                if (cartTotal >= 5_000 && cartTotal <= 14_999){
+                if (cartTotal >= 5_000 && cartTotal < 15_000){
                     return cartTotal * 0.9;
                 }
                 return cartTotal;
 
             case "BIGBOY20":
-                if (cartTotal >= 15_000 && cartTotal <= 29_999){
+                if (cartTotal >= 15_000 && cartTotal < 30_000){
                     return cartTotal * 0.8;
                 }
                 return cartTotal;

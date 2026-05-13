@@ -17,6 +17,7 @@
 //else return final price
 
 // Rule of thumb: Don't test what the compiler already checks
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -37,7 +38,6 @@ public class OshoFreePromoEngineTest{
         String promoCode = "STARTER10";
         double expected = cartTotal;
         double result = OshoFreePromoEngine.applyPromo(cartTotal, promoCode);
-        assertEquals(expected, result);
         assertEquals(expected, result, 0.001);
     }
 
@@ -48,8 +48,9 @@ public class OshoFreePromoEngineTest{
         String promoCode = "STARTER10";
         double expected = cartTotal * 0.9;
         double result = OshoFreePromoEngine.applyPromo(cartTotal, promoCode);
-        assertEquals(expected, result);
+        assertEquals(expected, result, 0.001);
     }
+
 
     @Test
     public void testCartBetween5000And14999WithWrongCodeReturnsOriginalPrice(){
@@ -57,8 +58,9 @@ public class OshoFreePromoEngineTest{
         String promoCode = "BIGBOY20";
         double expected = cartTotal;
         double result = OshoFreePromoEngine.applyPromo(cartTotal, promoCode);
-        assertEquals(expected, result);
+        assertEquals(expected, result, 0.001);
     }
+
 
     @Test    
     public void testCartBetween15000And29999Returns20PercentDiscountedPriceWithValidCode(){
@@ -66,7 +68,7 @@ public class OshoFreePromoEngineTest{
         String promoCode = "BIGBOY20";
         double expected = cartTotal * 0.8;
         double result = OshoFreePromoEngine.applyPromo(cartTotal, promoCode);
-        assertEquals(expected, result);
+        assertEquals(expected, result, 0.001);
     }
 
 
@@ -76,17 +78,19 @@ public class OshoFreePromoEngineTest{
         String promoCode = "OSHOFREE35";
         double expected = cartTotal;
         double result = OshoFreePromoEngine.applyPromo(cartTotal, promoCode);
-        assertEquals(expected, result);
+        assertEquals(expected, result, 0.001);
     }
 
+
     @Test    
-    public void testCartAbove30000Returns35PercentDiscountedPriceWithValidCode(){
-        double cartTotal = 150_000.00;
+    public void testCartAboveOrEqualTo30000Returns35PercentDiscountedPriceWithValidCode(){
+        double cartTotal = 30_000.00;
         String promoCode = "OSHOFREE35";
         double expected = cartTotal * 0.65;
         double result = OshoFreePromoEngine.applyPromo(cartTotal, promoCode);
-        assertEquals(expected, result);
+        assertEquals(expected, result, 0.001);
     }
+
 
     @Test
     public void testCartAbove30000WithWrongCodeReturnsOriginalPrice(){
@@ -94,8 +98,9 @@ public class OshoFreePromoEngineTest{
         String promoCode = "BIGBOY20";
         double expected = cartTotal;
         double result = OshoFreePromoEngine.applyPromo(cartTotal, promoCode);
-        assertEquals(expected, result);
+        assertEquals(expected, result, 0.001);
     }
+
 
     @Test
     public void testAnyCartTotalReturnsOriginalCartPriceForInvalidPromoCode(){
@@ -103,7 +108,7 @@ public class OshoFreePromoEngineTest{
         String promoCode = "FAKE99";
         double result = OshoFreePromoEngine.applyPromo(cartTotal, promoCode);
         double expected = 14_999.00;
-        assertEquals(expected, result);
+        assertEquals(expected, result, 0.001);
 //        double[] cartTotalArray = {5_000.00, 15_000.00, 30_000.00};
 //        String promoCode = "FAKE99";
 //        double[] results = new double[3];
@@ -123,8 +128,33 @@ public class OshoFreePromoEngineTest{
 //        }
     }
 
-//    @Test
-//    public void testPromoCodeBoudariesReturn
+
+    @Test
+    public void testStarter10PromoCodeCaseAtUpperBoundary(){
+        double cartTotal = 14_999.50;
+        String promoCode = "STARTER10";
+        double expected = cartTotal * 0.9;
+        double result = OshoFreePromoEngine.applyPromo(cartTotal, promoCode);
+        assertEquals(expected, result, 0.001);
+    }
+
+
+    @Test
+    public void testBigBoy20PromoCodeCaseAtUpperBoundary(){
+        double cartTotal = 29_999.50;
+        String promoCode = "BIGBOY20";
+        double expected = cartTotal * 0.8;
+        double result = OshoFreePromoEngine.applyPromo(cartTotal, promoCode);
+        assertEquals(expected, result, 0.001);
+    }
+
+
+    @Test
+    public void testInvalidAmountsRaisesValueError(){
+        double cartTotal = -30_000.00;
+        String promoCode = "OSHOFREE35";
+        assertThrows(IllegalArgumentException.class, () -> {OshoFreePromoEngine.applyPromo(cartTotal, promoCode);});
+    }
 }
 
 //java -cp "junit-platform-console-standalone-1.12.2.jar:out" org.junit.platform.console.ConsoleLauncher --scan-class-path
