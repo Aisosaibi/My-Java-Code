@@ -1,31 +1,22 @@
-public class OshoFreePromoEngine{
-    public static double applyPromo(double cartTotal, String promoCode){
-
-        if (cartTotal < 0){
+public class OshoFreePromoEngine {
+    public static double applyPromo(double cartTotal, String promoCode) {
+        if (cartTotal < 0) {
             throw new IllegalArgumentException("Cart total cannot be negative");
         }
-
-        switch (promoCode){
+        switch (promoCode) {
             case "STARTER10":
-                if (cartTotal >= 5_000 && cartTotal < 15_000){
-                    return cartTotal * 0.9;
-                }
+                if (cartTotal >= 5_000 && cartTotal < 15_000) return cartTotal * 0.9;
                 return cartTotal;
 
             case "BIGBOY20":
-                if (cartTotal >= 15_000 && cartTotal < 30_000){
-                    return cartTotal * 0.8;
-                }
+                if (cartTotal >= 15_000 && cartTotal < 30_000) return cartTotal * 0.8;
                 return cartTotal;
 
             case "OSHOFREE35":
-                if (cartTotal >= 30_000){
-                    return cartTotal * 0.65;
-                }
+                if (cartTotal >= 30_000) return cartTotal * 0.65;
                 return cartTotal;
-
             default:
                 return cartTotal;
-            }
+        }
     }
 }
