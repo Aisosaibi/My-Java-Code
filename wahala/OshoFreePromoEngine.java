@@ -15,6 +15,7 @@ public class OshoFreePromoEngine {
             case "OSHOFREE35":
                 if (cartTotal >= 30_000) return cartTotal * 0.65;
                 return cartTotal;
+
             default:
                 return cartTotal;
         }
